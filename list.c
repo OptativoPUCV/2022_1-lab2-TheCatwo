@@ -37,15 +37,29 @@ List * createList() {
 }
 
 void * firstList(List * list) {
-    return NULL;
+    void* dato=(void*)list->head->data;
+    list->current=list->head;
+    return dato;
 }
 
 void * nextList(List * list) {
+    if(list->current==NULL)
+  {
     return NULL;
+  }
+   if(list->current->next!=NULL)
+  {
+    void* dato=(void*)list->current->next->data;
+    list->current=list->current->next;
+    return dato;
+  }
+  return NULL;
 }
 
 void * lastList(List * list) {
-    return NULL;
+    void* dato=(void*)list->tail->data;
+    list->current=list->tail;
+    return dato;
 }
 
 void * prevList(List * list) {
@@ -53,6 +67,15 @@ void * prevList(List * list) {
 }
 
 void pushFront(List * list, void * data) {
+  Node* n=createNode(data);
+  n->next=list->head;
+  if(list->head)
+  {
+    list->head->prev=n;
+  }
+  list->head=n;
+  n->prev=NULL;
+  list->tail=n;
 }
 
 void pushBack(List * list, void * data) {
