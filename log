@@ -28,3 +28,14 @@ Sun Mar 20 02:37:01 UTC 2022:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 4672309
+Sun Mar 20 02:38:42 UTC 2022: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+list.c: In function ‘firstList’:
+list.c:40:16: error: initialization discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+     void* dato=(const void*)list->head->data;
+                ^
+cc1: all warnings being treated as errors
+Compilation failed
+61a19ad
