@@ -106,7 +106,7 @@ void pushCurrent(List * list, void * data) {
   list->current = list->head;
   return list->current->data;
  }
-void* nextL ( Lista* L ){
+void* nextL ( List* L ){
 if(L->current == NULL || L->current->next == NULL){
 return NULL;
 }
