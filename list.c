@@ -87,24 +87,7 @@ void pushBack(List * list, void * data) {
 }
 
 void pushCurrent(List * list, void * data) {
-  Node* newN = createNode(data);
-  Node* auxN = list->current;
-  Node* Acurr = auxN->prev;
-  if(auxN->prev == NULL){
-  auxN->prev = newN;
-  newN->next = auxN;
-  list->head = newN;
-  }
-  else{
-  Acurr->next = newN;
-  newN->prev = Acurr;
-  auxN->prev = newN;
-  newN->next = auxN;
-}
-  if(list->head == NULL)
-    return NULL;
-  list->current = list->head;
-  return list->current;
+  return NULL;
  }
 void* nextL ( List* L ){
 if(L->current == NULL || L->current->next == NULL){
