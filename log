@@ -188,3 +188,60 @@ list.c:102:7: error: request for member ‘next’ in something not a structure 
 cc1: all warnings being treated as errors
 Compilation failed
 e791fa4
+Sun Mar 20 13:52:45 UTC 2022: 
+ list.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:0:
+list.c: In function ‘prevList’:
+list.c:68:23: error: ‘List {aka struct List}’ has no member named ‘prev’
+     list->current=list->prev;
+                       ^~
+list.c: In function ‘pushCurrent’:
+list.c:90:3: error: unknown type name ‘Nodo’; did you mean ‘Node’?
+   Nodo* newN = createNode(data);
+   ^~~~
+   Node
+list.c:90:16: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+   Nodo* newN = createNode(data);
+                ^~~~~~~~~~
+list.c:91:3: error: unknown type name ‘Nodo’; did you mean ‘Node’?
+   Nodo* auxN = list->current;
+   ^~~~
+   Node
+list.c:91:16: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+   Nodo* auxN = list->current;
+                ^~~~
+list.c:92:3: error: unknown type name ‘Nodo’; did you mean ‘Node’?
+   Nodo* Acurr = auxN->prev;
+   ^~~~
+   Node
+list.c:92:21: error: request for member ‘prev’ in something not a structure or union
+   Nodo* Acurr = auxN->prev;
+                     ^~
+list.c:93:10: error: request for member ‘prev’ in something not a structure or union
+   if(auxN->prev == NULL){
+          ^~
+list.c:94:7: error: request for member ‘prev’ in something not a structure or union
+   auxN->prev = newN;
+       ^~
+list.c:95:7: error: request for member ‘next’ in something not a structure or union
+   newN->next = auxN;
+       ^~
+list.c:96:14: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+   list->head = newN;
+              ^
+list.c:99:8: error: request for member ‘next’ in something not a structure or union
+   Acurr->next = newN;
+        ^~
+list.c:100:7: error: request for member ‘prev’ in something not a structure or union
+   newN->prev = Acurr;
+       ^~
+list.c:101:7: error: request for member ‘prev’ in something not a structure or union
+   auxN->prev = newN;
+       ^~
+list.c:102:7: error: request for member ‘next’ in something not a structure or union
+   newN->next = auxN;
+       ^~
+cc1: all warnings being treated as errors
+Compilation failed
+2f7f01d
