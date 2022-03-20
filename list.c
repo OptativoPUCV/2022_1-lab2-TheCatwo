@@ -87,7 +87,7 @@ void pushBack(List * list, void * data) {
 }
 
 void pushCurrent(List * list, void * data) {
-  return NULL;
+  
  }
 void* nextL ( List* L ){
 if(L->current == NULL || L->current->next == NULL){
