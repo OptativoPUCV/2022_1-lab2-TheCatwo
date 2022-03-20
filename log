@@ -13,3 +13,13 @@ Sun Mar 20 02:33:59 UTC 2022:
  1 file changed, 25 insertions(+), 2 deletions(-)
  tests:  0|0
 753022a
+Sun Mar 20 02:36:40 UTC 2022: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+list.c: In function ‘firstList’:
+list.c:40:27: error: ‘List {aka struct List}’ has no member named ‘data’
+     void* dato=(void*)list->data;
+                           ^~
+Compilation failed
+014cc8a
