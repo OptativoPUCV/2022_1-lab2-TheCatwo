@@ -304,3 +304,28 @@ Sun Mar 20 13:53:45 UTC 2022:
  tests:  7|3
 total_score: 35/70
 5306470
+Sun Mar 20 14:55:15 UTC 2022: 
+ list.c | 15 +++++++++++++--
+ 1 file changed, 13 insertions(+), 2 deletions(-)
+In file included from test.c:5:0:
+list.c: In function ‘pushCurrent’:
+list.c:105:12: error: ‘return’ with a value, in function returning void [-Werror]
+     return NULL;
+            ^~~~
+list.c:89:6: note: declared here
+ void pushCurrent(List * list, void * data) {
+      ^~~~~~~~~~~
+list.c:107:23: error: ‘return’ with a value, in function returning void [-Werror]
+   return list->current->data;
+          ~~~~~~~~~~~~~^~~~~~
+list.c:89:6: note: declared here
+ void pushCurrent(List * list, void * data) {
+      ^~~~~~~~~~~
+list.c: At top level:
+list.c:109:15: error: unknown type name ‘Lista’; did you mean ‘List’?
+ void* nextL ( Lista* L ){
+               ^~~~~
+               List
+cc1: all warnings being treated as errors
+Compilation failed
+bcab125
