@@ -63,3 +63,22 @@ list.c:44:1: error: control reaches end of non-void function [-Werror=return-typ
 cc1: all warnings being treated as errors
 Compilation failed
 a1ad444
+Sun Mar 20 02:52:11 UTC 2022: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+list.c: In function ‘firstList’:
+list.c:42:5: error: expected ‘;’ before ‘list’
+     list->current=list->head;
+     ^~~~
+list.c:43:17: error: ‘current’ undeclared (first use in this function); did you mean ‘popCurrent’?
+     return list-current;
+                 ^~~~~~~
+                 popCurrent
+list.c:43:17: note: each undeclared identifier is reported only once for each function it appears in
+list.c:44:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+aa2d7fd
